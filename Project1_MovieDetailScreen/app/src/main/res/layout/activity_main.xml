@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:src="@drawable/avengers_endgame" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="어벤져스: 엔드게임"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/limit_12" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2019.04.24 개봉"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold"/>
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="액션,SF / 181분"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+
+                <!-- 좋아요, 싫어요를 눌렀을때 이미지를 변경시키기위해 프레임레이아웃위에 이미지를 2개 겹쳐놓고 버튼을 투명화시켜 처리하였습니다. (다른방법은 뭐가 있을까요? -->
+                <!-- 좋아요 프레임아웃 -->
+                <FrameLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00FF0000"
+                        android:onClick="onButton1Clicked" />
+
+                    <ImageView
+                        android:id="@+id/up"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/thumb_up"
+                        android:layout_marginRight="10dp"/>
+
+                    <ImageView
+                        android:id="@+id/up_selected"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/thumb_up_selected"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <!-- TextView에 들어갈 숫자는 위에 버튼 입력이벤트에서 변수를 하나 설정하여 눌럿을시 +1, -1반복해서 그 변수를 보여주고 싶은데 그 변수를 xml파일로 가져오는 방법을 못찾았습니다. -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,223,135"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@android:color/background_light" />
+
+
+                <!-- 싫어요 프레임아웃 -->
+                <FrameLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00FF0000"
+                        android:onClick="onButton2Clicked" />
+
+                    <ImageView
+                        android:id="@+id/down"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/thumb_down"
+                        android:layout_marginRight="10dp"/>
+
+                    <ImageView
+                        android:id="@+id/down_selected"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/thumb_down_selected"
+                        android:visibility="invisible" />
+
+                </FrameLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,201"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/background_light" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예매율"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1위 90.2%"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평점"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:rating="4.7"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="누적관객수"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13,927,855"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="인피니티 워 이후 절반만 살아남은 지구
+ 마지막 희망이 된 어벤져스
+ 먼저 떠난 그들을 위해 모든 것을 걸었다!
+
+ 위대한 어벤져스
+ 운명을 바꿀 최후의 전쟁이 펼쳐진다!"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="한줄평"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/linear_border_orange"
+            android:text="작성하기"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <!-- 한줄평 작섣을 위한 공간 비우기 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linear_border_orange"
+            android:text="모두보기"
+            android:textColor="#E44418" />
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- TODO: 마지막 버튼 3개 만들면 됨(페이스북,카톡,예매하기) -->
+    </LinearLayout>
+
+
+</LinearLayout>
