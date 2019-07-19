@@ -227,6 +227,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="인피니티 워 이후 절반만 살아남은 지구
@@ -236,6 +237,68 @@
  위대한 어벤져스
  운명을 바꿀 최후의 전쟁이 펼쳐진다!"
             android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="감독/출연"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="감독"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="안소니 루소, 존 루소"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="배우"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="로버트 다우니 주니어, 크리스 에반스, 스칼렛 요한슨"/>
+
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <RelativeLayout
@@ -263,10 +326,10 @@
             android:textSize="18dp"
             android:textStyle="bold" />
     </RelativeLayout>
-    <!-- 한줄평 작섣을 위한 공간 비우기 -->
+    <!-- 한줄평 작섣을 위한 공간 비우기 / 화면해상도 공간이 부족하여 크게 못하였습니다. -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="100dp">
 
     </FrameLayout>
     <FrameLayout
@@ -280,12 +343,47 @@
             android:text="모두보기"
             android:textColor="#E44418" />
     </FrameLayout>
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <!-- TODO: 마지막 버튼 3개 만들면 됨(페이스북,카톡,예매하기) -->
-    </LinearLayout>
+
+        <!-- 화면 해상도 때문에 화면공간이 부족하여 작게 만들 수 밖에없습니다. 옆에 스크롤바 만들고 밑으로 내리게 하고싶엇는데 어려워서 못햇습니다. -->
+
+        <Button
+            android:id="@+id/facebook"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_facebook"
+            android:onClick="onButton3Clicked" />
+
+        <Button
+            android:id="@+id/kakao"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/facebook"
+            android:background="@drawable/ic_kakao"
+            android:onClick="onButton4Clicked" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/holo_red_dark"
+            android:onClick="onButton5Clicked"
+            android:text="예매하기"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
 
 </LinearLayout>

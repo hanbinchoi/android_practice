@@ -1,5 +1,7 @@
 package org.techtown.moviedetailscreen;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             up_selected.setVisibility((View.VISIBLE));
         }
     }
+
+    //싫어요 이미지를 클릭햇을때 이벤트
     public void onButton2Clicked(View v){
         index2 += 1;
         if(index2>1){
@@ -63,4 +67,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //페이스북, 카톡, 예매하기 버튼클릭스 관련 사이트이동 (앱을 실행시키고 싶지만 모르겠습니다.
+
+    public void onButton3Clicked(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/"));
+        startActivity(intent);
+    }
+
+    public void onButton4Clicked(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.kakaocorp.com/service/KakaoTalk?lang=ko"));
+        startActivity(intent);
+    }
+
+    public void onButton5Clicked(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.cgv.co.kr/"));
+        startActivity(intent);
+    }
 }
