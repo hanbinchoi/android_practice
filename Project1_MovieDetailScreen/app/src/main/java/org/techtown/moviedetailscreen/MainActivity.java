@@ -1,71 +1,102 @@
 package org.techtown.moviedetailscreen;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
-
-    ImageView up;
-    ImageView up_selected;
-    ImageView down;
-    ImageView down_selected;
-    // 좋아요 싫어요 이미지를 저장할 변수들
 
     int index=0;
     int index2=0;
     int a=1234;
+    View like;
+    View unlike;
+    TextView likeNum;
+    TextView unlikeNum;
+    int likeNumInt;
+    int unlikeNumInt;
+    DecimalFormat myFormatter = new DecimalFormat("###,###");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        up = (ImageView)findViewById(R.id.up);
-        up_selected = (ImageView)findViewById(R.id.up_selected);
-        down = (ImageView)findViewById(R.id.down);
-        down_selected = (ImageView)findViewById(R.id.down_selected);
+        like=findViewById(R.id.like);
+        likeNum=(TextView)findViewById(R.id.likeNum);
+        likeNumInt=Integer.parseInt(likeNum.getText().toString());
 
-        //이미지를 변수에 저장합니다.
+        unlike=findViewById(R.id.unlike);
+        unlikeNum=(TextView)findViewById(R.id.unlikeNum);
+        unlikeNumInt=Integer.parseInt(unlikeNum.getText().toString());
+
+        likeNum.setText(myFormatter.format(likeNumInt));
+        unlikeNum.setText(myFormatter.format(unlikeNumInt));
+
+        like.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+
+                if (action == MotionEvent.ACTION_DOWN && index == 0) {
+                    index = 1;
+                    likeNumInt+=1;
+                } else if (action == MotionEvent.ACTION_DOWN && index != 0) {
+                    index = 0;
+                    likeNumInt-=1;
+                }
+
+                if (index == 0) {
+                    like.setBackgroundResource(R.drawable.thumb_up);
+                    likeNum.setText(myFormatter.format(likeNumInt));
+
+                } else if (index == 1) {
+                    like.setBackgroundResource(R.drawable.thumb_up_selected);
+                    likeNum.setText(myFormatter.format(likeNumInt));
+                }
+                return true;
+            }
+        });
+
+            unlike.setOnTouchListener(new View.OnTouchListener(){
+                @Override
+            public boolean onTouch(View v, MotionEvent event){
+                int action=event.getAction();
+
+                if(action==MotionEvent.ACTION_DOWN && index==0){
+                    index=1;
+                    unlikeNumInt+=1;
+                }else if(action==MotionEvent.ACTION_DOWN && index!=0){
+                    index=0;
+                    unlikeNumInt-=1;
+                }
+
+                if(index==0){
+                    unlike.setBackgroundResource(R.drawable.thumb_down);
+                    unlikeNum.setText(myFormatter.format(unlikeNumInt));
+
+                }else if(index==1){
+                    unlike.setBackgroundResource(R.drawable.thumb_down_selected);
+                    unlikeNum.setText(myFormatter.format(unlikeNumInt));
+                }
+                return true;
+            }
+        });
 
     }
 
-    //좋아요 이미지를 클릭햇을때 이벤트
-    public void onButton1Clicked(View v){
-        index+=1;
-        if(index>1){
-            index=0;
-        }
-        if(index==0){
-            up.setVisibility(View.VISIBLE);
-            up_selected.setVisibility(View.INVISIBLE);
 
-        }else if(index==1)
-        {
-            up.setVisibility(View.INVISIBLE);
-            up_selected.setVisibility((View.VISIBLE));
-        }
-    }
 
-    //싫어요 이미지를 클릭햇을때 이벤트
-    public void onButton2Clicked(View v){
-        index2 += 1;
-        if(index2>1){
-            index2=0;
-        }
-        if(index2==0){
-            down.setVisibility(View.VISIBLE);
-            down_selected.setVisibility(View.INVISIBLE);
-
-        }else if(index2==1)
-        {
-            down.setVisibility(View.INVISIBLE);
-            down_selected.setVisibility((View.VISIBLE));
-        }
-    }
 
     //페이스북, 카톡, 예매하기 버튼클릭스 관련 사이트이동 (앱을 실행시키고 싶지만 모르겠습니다.
 
@@ -84,3 +115,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
+

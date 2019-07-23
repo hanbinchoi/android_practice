@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +23,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+
             android:orientation="vertical">
 
             <LinearLayout
@@ -29,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="어벤져스: 엔드게임"
+                    android:text="@string/title"
                     android:textColor="@android:color/background_light"
                     android:textSize="24dp"
                     android:textStyle="bold" />
@@ -44,14 +49,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2019.04.24 개봉"
+                android:text="@string/date"
                 android:textColor="@android:color/background_light"
                 android:textStyle="bold"/>
 
             <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="액션,SF / 181분"
+            android:text="@string/genre"
             android:textColor="@android:color/background_light"
             android:textStyle="bold"/>
             <LinearLayout
@@ -60,42 +65,28 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
 
-
-                <!-- 좋아요, 싫어요를 눌렀을때 이미지를 변경시키기위해 프레임레이아웃위에 이미지를 2개 겹쳐놓고 버튼을 투명화시켜 처리하였습니다. (다른방법은 뭐가 있을까요? -->
                 <!-- 좋아요 프레임아웃 -->
                 <FrameLayout
                     android:layout_width="30dp"
                     android:layout_height="30dp">
 
-                    <Button
+                    <View
+                        android:id="@+id/like"
+                        android:background="@drawable/thumb_up"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#00FF0000"
-                        android:onClick="onButton1Clicked" />
+                        android:layout_height="match_parent" />
 
-                    <ImageView
-                        android:id="@+id/up"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/thumb_up"
-                        android:layout_marginRight="10dp"/>
 
-                    <ImageView
-                        android:id="@+id/up_selected"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/thumb_up_selected"
-                        android:visibility="invisible" />
 
                 </FrameLayout>
 
 
                 <!-- TextView에 들어갈 숫자는 위에 버튼 입력이벤트에서 변수를 하나 설정하여 눌럿을시 +1, -1반복해서 그 변수를 보여주고 싶은데 그 변수를 xml파일로 가져오는 방법을 못찾았습니다. -->
                 <TextView
+                    android:id="@+id/likeNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1,223,135"
+                    android:text="123543532"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:layout_marginRight="10dp"
@@ -107,37 +98,27 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp">
 
-                    <Button
+                    <View
+                        android:id="@+id/unlike"
+                        android:background="@drawable/thumb_down"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#00FF0000"
-                        android:onClick="onButton2Clicked" />
+                        android:layout_height="match_parent" />
 
-                    <ImageView
-                        android:id="@+id/down"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/thumb_down"
-                        android:layout_marginRight="10dp"/>
 
-                    <ImageView
-                        android:id="@+id/down_selected"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/thumb_down_selected"
-                        android:visibility="invisible" />
 
                 </FrameLayout>
 
 
                 <TextView
+                    android:id="@+id/unlikeNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1,201"
+                    android:text="1214"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@android:color/background_light" />
+
+
             </LinearLayout>
 
         </LinearLayout>
@@ -226,17 +207,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="인피니티 워 이후 절반만 살아남은 지구
- 마지막 희망이 된 어벤져스
- 먼저 떠난 그들을 위해 모든 것을 걸었다!
-
- 위대한 어벤져스
- 운명을 바꿀 최후의 전쟁이 펼쳐진다!"
+            android:text="@string/plot"
             android:textColor="@android:color/black" />
+
+        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
@@ -329,7 +312,7 @@
     <!-- 한줄평 작섣을 위한 공간 비우기 / 화면해상도 공간이 부족하여 크게 못하였습니다. -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="500dp">
 
     </FrameLayout>
     <FrameLayout
@@ -385,5 +368,7 @@
 
     </RelativeLayout>
 
+    </LinearLayout>
 
-</LinearLayout>
+
+</ScrollView>

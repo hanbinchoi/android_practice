@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">최한빈영화</string>
+    <string name="title">어벤져스 엔드게임</string>
+    <string name="date">2019.04.24 개봉</string>
+    <string name="genre">액션,SF / 181분</string>
+    <string name="like">1,223,135</string>
+    <string name="unlike">1,201</string>
+    <string name="plot">인피니티 워 이후 절반만 살아남은 지구
+ 마지막 희망이 된 어벤져스 \n
+ 먼저 떠난 그들을 위해 모든 것을 걸었다!\n\n
+
+ 위대한 어벤져스\n\n
+
+ 운명을 바꿀 최후의 전쟁이 펼쳐진다!\n
+
+
+    </string>
 </resources>
