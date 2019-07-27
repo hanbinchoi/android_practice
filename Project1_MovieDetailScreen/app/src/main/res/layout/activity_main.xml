@@ -9,120 +9,100 @@
         android:orientation="vertical">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradient"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="140dp"
-            android:src="@drawable/avengers_endgame" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient"
+            android:orientation="horizontal">
 
-            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:src="@drawable/avengers_endgame" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/limit_12" />
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/title"
+                    android:text="@string/date"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/limit_12" />
-            </LinearLayout>
-
-            <TextView
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/date"
+                android:text="@string/genre"
                 android:textColor="@android:color/background_light"
                 android:textStyle="bold"/>
-
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/genre"
-            android:textColor="@android:color/background_light"
-            android:textStyle="bold"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-
-                <!-- 좋아요 프레임아웃 -->
-                <FrameLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp">
-
-                    <View
-                        android:id="@+id/like"
-                        android:background="@drawable/thumb_up"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-
-
-                </FrameLayout>
-
-
-                <!-- TextView에 들어갈 숫자는 위에 버튼 입력이벤트에서 변수를 하나 설정하여 눌럿을시 +1, -1반복해서 그 변수를 보여주고 싶은데 그 변수를 xml파일로 가져오는 방법을 못찾았습니다. -->
-                <TextView
-                    android:id="@+id/likeNum"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="123543532"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10dp"
-                    android:textColor="@android:color/background_light" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/likeButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/thumbs_up_selector"/>
+
+                    <TextView
+                        android:id="@+id/likeCountView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123543532"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@android:color/background_light" />
+
+                    <Button
+                        android:id="@+id/unlikeButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/thumbs_down_selector"/>
+
+                    <TextView
+                        android:id="@+id/unlikeCountView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1214"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@android:color/background_light" />
 
 
-                <!-- 싫어요 프레임아웃 -->
-                <FrameLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp">
-
-                    <View
-                        android:id="@+id/unlike"
-                        android:background="@drawable/thumb_down"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-
-
-                </FrameLayout>
-
-
-                <TextView
-                    android:id="@+id/unlikeNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1214"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/background_light" />
-
+                </LinearLayout>
 
             </LinearLayout>
-
         </LinearLayout>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -203,21 +183,22 @@
     </LinearLayout>
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="wrap_content">
 
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/plot"
-            android:textColor="@android:color/black" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/plot"
+                android:textColor="@android:color/black" />
 
         </ScrollView>
     </LinearLayout>
@@ -301,6 +282,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/writeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -308,18 +290,32 @@
             android:text="작성하기"
             android:textSize="18dp"
             android:textStyle="bold" />
-    </RelativeLayout>
-    <!-- 한줄평 작섣을 위한 공간 비우기 / 화면해상도 공간이 부족하여 크게 못하였습니다. -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="500dp">
 
-    </FrameLayout>
+    </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ListView>
+
+        </LinearLayout>
+
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/showAllButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/linear_border_orange"
