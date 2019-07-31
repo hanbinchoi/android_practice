@@ -4,12 +4,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class CommentItemView extends LinearLayout {
 
     TextView userIdText;
     TextView commentText;
+    RatingBar ratingBar;
+
     public CommentItemView(Context context) {
         super(context);
         init(context);
@@ -27,6 +30,7 @@ public class CommentItemView extends LinearLayout {
 
         userIdText = (TextView)findViewById(R.id.userID);
         commentText = (TextView)findViewById(R.id.comment);
+        ratingBar = (RatingBar)findViewById(R.id.ratingBar);
 
     }
 
@@ -36,4 +40,5 @@ public class CommentItemView extends LinearLayout {
     public void setComment(String comment) {
         commentText.setText(comment);
     }
+    public void setRating(float rating){ ratingBar.setRating(rating); }
 }

@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +16,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Comment;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -23,21 +28,24 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    int index=0;
-    int index2=0;
-    int a=1234;
     Button likeButton;
     Button unlikeButton;
-    Button writeButton;
     Button showAllButton;
     TextView likeCountView;
     TextView unlikeCountView;
+    ListView listView;
+    CommentAdapter adapter;
+    ArrayList<CommentItem> items = new ArrayList<CommentItem>();
+
     int likeCount;
     int unlikeCount;
     boolean likeState=false;
     boolean unlikeState=false;
     DecimalFormat myFormatter = new DecimalFormat("###,###");
 
+    float ratingSum = 0.0f;
+    float ratingAvg = 0.0f;
+    int userCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,34 +88,124 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ListView listView = (ListView)findViewById(R.id.listView);
-        CommentAdapter adapter =new CommentAdapter();
-        adapter.addItem(new CommentItem("liv**","ㅋㅅㅋ"));
-        adapter.addItem(new CommentItem("liv**","ㅋㅅㅋ"));
-        adapter.addItem(new CommentItem("liasdasd**","asdasd"));
+        listView = (ListView)findViewById(R.id.listView);
+        adapter = new CommentAdapter();
+
+        items.add(new CommentItem("liv**","ㅋㅅㅋ",3.0f));
+        adapter.addItem(new CommentItem("liv**","ㅋㅅㅋ",3.0f));
+
+        items.add(new CommentItem("liv**","ㅋㅅㅋ",3.0f));
+        adapter.addItem(new CommentItem("liv**","ㅋㅅㅋ",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        items.add(new CommentItem("liasdasd**","asdasd",3.0f));
+        adapter.addItem(new CommentItem("liasdasd**","asdasd",3.0f));
+
+        ratingSum = 15*3.0f;
+        userCount = 15;
+        ratingAvg = ratingSum/userCount;
 
         listView.setAdapter(adapter);
 
-        writeButton = (Button)findViewById(R.id.writeButton);
+
+        //작성하기 버튼
+        Button writeButton = (Button)findViewById(R.id.writeButton);
         writeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(getApplicationContext(),"작성하기 버튼이 눌렸습니다.",Toast.LENGTH_LONG).show();
+                showCommentWriteActivity();
             }
         });
 
+        //모두보기 버튼
         showAllButton=(Button)findViewById(R.id.showAllButton);
         showAllButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "모두보기 버튼이 눌렸습니다.", Toast.LENGTH_LONG).show();
+                showAllCommentActivity();
             }
         });
+
+
+    }
+
+    //작성하기 버튼 이벤트
+    public void showCommentWriteActivity(){
+
+        Intent intent = new Intent(getApplicationContext(),CommentWriteActivity.class);
+        intent.putExtra("userID","livid");
+        startActivityForResult(intent,101);
+    }
+
+    //모두보기 버튼 이벤트
+    public void showAllCommentActivity(){
+
+        Intent intent = new Intent(getApplicationContext(),ShowAllCommentActivity.class);
+        intent.putExtra("ratingAvg",ratingAvg);
+        intent.putExtra("userCount",userCount);
+        intent.putParcelableArrayListExtra("items",items);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+
+        if(requestCode == 101){
+            if(intent != null){
+                String contents = intent.getStringExtra("contents");
+                float rating = intent.getFloatExtra("rating",0.0f);
+
+                adapter.addItem(new CommentItem("livid",contents,rating));
+                items.add(new CommentItem("livid",contents,rating));
+
+                ratingSum = ratingSum + rating;
+                userCount++;
+                ratingAvg = ratingSum/userCount;
+                listView.setAdapter(adapter);
+            }
+        }
     }
 
     class CommentAdapter extends BaseAdapter{
 
         ArrayList<CommentItem> items = new ArrayList<CommentItem>();
+
 
         //처음에 아이템이 몇개 들어있니? 물어봄
         @Override
@@ -116,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void addItem(CommentItem item){
+
             items.add(item);
         }
 
@@ -124,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
         public Object getItem(int i) {
             return items.get(i); //i번째 아이템을 리턴
         }
+
 
         //id라는 값이 있으면 넘겨달라
         @Override
@@ -139,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
             CommentItem item = items.get(i);
             view.setUserID(item.getUserID());
             view.setComment(item.getComment());
+            view.setRating(item.getRating());
 
             return view;
         }
