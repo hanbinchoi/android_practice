@@ -30,10 +30,13 @@ public class MainActivity extends AppCompatActivity
         MoviePagerAdapter adapter = new MoviePagerAdapter(getSupportFragmentManager());
         Fragment1 fragment1 = new Fragment1();
         adapter.addItem(fragment1);
+
         Fragment2 fragment2 = new Fragment2();
         adapter.addItem(fragment2);
+
         Fragment3 fragment3 = new Fragment3();
         adapter.addItem(fragment3);
+
         pager.setAdapter(adapter);
     }
 

@@ -11,7 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ShowAllCommentActivity" />
         <activity android:name=".CommentWriteActivity" />
-        <activity android:name=".MovieDetailScreen" />
+        <activity android:name=".AvengersDetailScreen" />
+        <activity android:name=".LittleForestDetailScreen" />
+        <activity android:name=".HarryPorterDetailScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

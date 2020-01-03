@@ -18,7 +18,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="140dp"
-                android:src="@drawable/little_forest" />
+                android:src="@drawable/harry_porter" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="리틀 포레스트"
+                        android:text="해리포터와 비밀의방"
                         android:textColor="@android:color/background_light"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -49,14 +49,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2018.02.28"
+                    android:text="2002.12.13"
                     android:textColor="@android:color/background_light"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="드라마 | 103분"
+                    android:text="판타지, 가족, 모험 | 162분"
                     android:textColor="@android:color/background_light"
                     android:textStyle="bold"/>
                 <LinearLayout
@@ -75,7 +75,7 @@
                         android:id="@+id/likeCountView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10028392"
+                        android:text="9521852"
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:layout_marginLeft="5dp"
@@ -92,7 +92,7 @@
                         android:id="@+id/unlikeCountView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="231"
+                        android:text="851"
                         android:textSize="20dp"
                         android:textStyle="bold"
                         android:layout_marginLeft="5dp"
@@ -126,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2위 88.2%"
+                    android:text="3위 89.7%"
                     android:textSize="15dp"
                     android:textStyle="bold"/>
 
@@ -173,7 +173,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10,642,100"
+                    android:text="9,527,985"
                     android:textSize="15dp"
                     android:textStyle="bold"/>
 
@@ -197,18 +197,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="“잠시 쉬어가도, 달라도, 평범해도 괜찮아!
-모든 것이 괜찮은 청춘들의 아주 특별한 사계절 이야기”
-시험, 연애, 취업… 뭐하나 뜻대로 되지 않는 일상을 잠시 멈추고
- 고향으로 돌아온 혜원은 오랜 친구인 재하와 은숙을 만난다\n\n
-
-남들과는 다른, 자신만의 삶을 살기 위해 고향으로 돌아온 ‘재하’,
- 평범한 일상에서의 일탈을 꿈꾸는 ‘은숙’과 함께
- 직접 키운 농작물로 한끼 한끼를 만들어 먹으며
- 겨울에서 봄, 그리고 여름, 가을을 보내고 다시 겨울을 맞이하게 된 혜원.\n\n
-
- 그렇게 특별한 사계절을 보내며 고향으로 돌아온 진짜 이유를 깨닫게 된 혜원은
- 새로운 봄을 맞이하기 위한 첫 발을 내딛는데…"
+                    android:text="해리 포터에겐 이번 여름방학이 별로 즐겁질 못했다. 마법이라면 질색을 하는 페투니아 이모(피오나 쇼 분)와 버논 이모부(리차드 그리피스 분)의 구박도 그렇지만, 무엇보다 속상한 건 단짝이었던 론 위즐리(루퍼트 그린트 분)와 헤르미온느 그레인저(엠마 왓슨 분)가 그 사이 자신을 까맣게 잊었는지 자신의 편지에 답장 한 통 없다는 것.\n\n
+  그러던 어느날 꼬마 집요정 도비가 해리의 침실에 나타나 뜻밖의 얘기를 한다. 호그와트 마법학교로 돌아가면 무서운 일을 당할 거라는 것. 도비는 해리를 학교에 못 가게 하려고 자신이 여태까지 론과 헤르미온느의 답장을 가로채 왔음을 고백한다. 그러나 도비와 더즐리 가족의 방해에도 불구, 해리는 론과 그의 형제들이 타고 온 하늘을 나는 자동차를 타고 이모집을 탈출, 따뜻한 가족애가 넘치는 론 위즐리의 집으로 간다.\n\n"
                     android:textColor="@android:color/black" />
 
             </ScrollView>
@@ -246,7 +236,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="임순례"/>
+                    android:text="크리스 콜럼버스"/>
 
 
             </LinearLayout>
@@ -268,7 +258,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="김태리, 류준열, 문소리"/>
+                    android:text="다니엘 래드클리프, 루퍼트 그린트, 엠마 왓슨"/>
 
 
             </LinearLayout>
@@ -339,6 +329,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <!-- 화면 해상도 때문에 화면공간이 부족하여 작게 만들 수 밖에없습니다. 옆에 스크롤바 만들고 밑으로 내리게 하고싶엇는데 어려워서 못햇습니다. -->
 
             <Button
                 android:id="@+id/facebook"
